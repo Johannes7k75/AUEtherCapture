@@ -28,9 +28,9 @@ jobs:
     - name: Install Npcap SDK (Windows)
       if: startsWith(matrix.os, 'windows-')
       run: |
-        curl -O https://nmap.org/npcap/dist/npcap-sdk-1.06.zip
-        Expand-Archive npcap-sdk-1.06.zip
-        mv npcap-sdk-1.06 C:/npcap-sdk
+        curl -O https://nmap.org/npcap/dist/npcap-sdk-1.12.zip
+        Expand-Archive npcap-sdk-1.12.zip
+        mv npcap-sdk-1.12 C:/npcap-sdk
         echo "INCLUDE=C:\npcap-sdk\include;$env:INCLUDE" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         echo "LIB=C:\npcap-sdk\Lib\x64;$env:LIB" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         echo "LIBPATH=C:\npcap-sdk\Lib\x64;$env:LIBPATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
